@@ -184,7 +184,6 @@ public class MovementScript : MonoBehaviour
                     default:
                         break;
                 }
-
                 if (Vector3.Distance(pos + offSet, position) < Vector3.Distance(pos, min1))
                 {
                     min1 = position;
@@ -225,12 +224,16 @@ public class MovementScript : MonoBehaviour
         }
 
 
-        Vector3 avoidVec = transform.position - ((min1 + min2) / 2);
-        avoidVec.Normalize();
+        Vector3 averageAvoid = (-(min1 - transform.position) + -(min2 - transform.position)) / 2;
+        averageAvoid.Normalize();
 
-        if (localID == 1)
-            Debug.DrawLine(transform.position, avoidVec, Color.red);
-        return avoidVec;
+        if(localID == 1)
+        {
+            Debug.Log("Min1: " + min1 + " Min2: " + min2);
+            Debug.DrawLine(transform.position, transform.position + (-(min1 - transform.position) + -(min2 - transform.position) / 2).normalized, Color.red);
+        }
+
+        return averageAvoid;
     }
 
     float GetSeekAngleChange(Vector3 seekTarget)
