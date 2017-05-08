@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AI Controllers\GhostController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\AI Controllers\ClydeController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AI Controllers\GhostController.cs" Line="136" Column="21" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="106" Column="21" />
+      <File FileName="Assets\Scripts\AI Controllers\BlinkyController.cs" Line="12" Column="8" />
+      <File FileName="Assets\Scripts\AI Controllers\PinkyController.cs" Line="32" Column="4" />
+      <File FileName="Assets\Scripts\PacManController.cs" Line="39" Column="31" />
+      <File FileName="Assets\Scripts\AI Controllers\InkyController.cs" Line="29" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
