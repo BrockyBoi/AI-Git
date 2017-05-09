@@ -29,12 +29,33 @@ public class PinkyController : MonoBehaviour, GhostSpecialization
 		switch (currentMode) {
 		case GhostController.ghostMode.kChase:
 			// Where do you go in chase mode?
-
+			switch (c.pacmanLastMove) {
+			case GameController.direction.kLeft:
+				x = (c.pacmanLoc.x - 4) / 8;
+				y = c.pacmanLoc.y / 8;
+				break;
+			case GameController.direction.kRight:
+				x = (c.pacmanLoc.x + 4) / 8;
+				y = c.pacmanLoc.y / 8;
+				break;
+			case GameController.direction.kUp:
+				x = c.pacmanLoc.x / 8;
+				y = (c.pacmanLoc.y + 4) / 8;
+				break;
+			case GameController.direction.kDown:
+				x = c.pacmanLoc.x / 8;
+				y = (c.pacmanLoc.y + 4) / 8;
+				break;
+			default:
+				x = 0;
+				y = 288 / 8;
+				break;
+			}
 			break;
 		case GhostController.ghostMode.kScatter:
 			// Where do you go in scatter mode?
-			x = 0;
-			y = 288;
+			y = 0;
+			x = 288 / 8;
 			break;
 		case GhostController.ghostMode.kDead: // back in ghost box
 			// Moves to top of ghost box before regenerating

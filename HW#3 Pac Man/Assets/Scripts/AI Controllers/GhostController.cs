@@ -69,7 +69,7 @@ public class GhostController : MonoBehaviour, ControlledObject
 		int targetx, targety;
 		switch (currentMode) {
 		case ghostMode.kChase:
-			if (true) { // Implement: when do you leave chase mode?
+			if (timeElapsed >= 20) { // Implement: when do you leave chase mode?
 				lastMode = currentMode;
 				//currentMode = // What mode do you change to?
 				//currentMode = ghostMode.kScatter;
@@ -81,7 +81,7 @@ public class GhostController : MonoBehaviour, ControlledObject
 			return lastDirection;
 
 		case ghostMode.kScatter:
-			if (true) { // Implement: when do you leave chase mode?
+			if (timeElapsed >= 7) { // Implement: when do you leave chase mode?
 				lastMode = currentMode;
 				//currentMode = // What mode do you change to?
 				currentMode = ghostMode.kChase;

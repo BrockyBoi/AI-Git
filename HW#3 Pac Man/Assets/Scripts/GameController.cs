@@ -21,8 +21,6 @@ public interface ControlledObject
 
 public class GameController : MonoBehaviour
 {
-	public static GameController controller;
-
 	public enum direction
 	{
 		kUp,
@@ -103,7 +101,6 @@ public class GameController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		controller = this;
 		ResetCharacterLocations	();
 	}
 

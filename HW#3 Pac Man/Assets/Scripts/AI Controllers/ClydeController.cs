@@ -12,7 +12,7 @@ public class ClydeController : MonoBehaviour, GhostSpecialization
 	public int GetStartDelay ()
 	{
 		// How long before ghost starts (implement)
-		return 0;
+		return 8;
 	}
 
 	public GhostController.ghostMode GetStartMode ()
@@ -27,12 +27,14 @@ public class ClydeController : MonoBehaviour, GhostSpecialization
 		switch (currentMode) {
 		case GhostController.ghostMode.kChase:
 			// Where do you go in chase mode?
-			if (GhostController.Dist ((int)transform.position.x, (int)transform.position.z, 
-				    GameController.controller.pacmanLoc.x, GameController.controller.pacmanLoc.y) < 8) {
-				x = GameController.controller.pacmanLoc.x;
-				y = GameController.controller.pacmanLoc.y;
-			} else
-				currentMode = GhostController.ghostMode.kScatter;
+			if (GhostController.Dist (c.clydeLoc.x / 8, c.clydeLoc.y / 8, 
+				    c.pacmanLoc.x / 8, c.pacmanLoc.y / 8) < 8) {
+				x = c.pacmanLoc.x / 8;
+				y = c.pacmanLoc.y / 8;
+			} else {
+				x = 0;
+				y = 0;
+			}
 			break;
 		case GhostController.ghostMode.kScatter:
 			x = 0;

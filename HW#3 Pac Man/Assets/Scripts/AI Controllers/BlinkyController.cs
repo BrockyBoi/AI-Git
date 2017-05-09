@@ -26,8 +26,8 @@ public class BlinkyController : MonoBehaviour, GhostSpecialization
 		switch (currentMode) {
 		case GhostController.ghostMode.kChase:
 			// Where do you go in chase mode?
-			x = GameController.controller.pacmanLoc.x;
-			y = GameController.controller.pacmanLoc.y;
+			x = c.pacmanLoc.x / 8;
+			y = c.pacmanLoc.y / 8;
 			break;
 		case GhostController.ghostMode.kScatter:
 			x = 244;
