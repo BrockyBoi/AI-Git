@@ -30,8 +30,8 @@ public class BlinkyController : MonoBehaviour, GhostSpecialization
 			y = c.pacmanLoc.y / 8;
 			break;
 		case GhostController.ghostMode.kScatter:
-			x = 244;
-			y = 288;
+			x = 244 / 8;
+			y = 288 / 8;
 			// Where do you go in scatter mode?
 			break;
 		case GhostController.ghostMode.kDead: // back in ghost box

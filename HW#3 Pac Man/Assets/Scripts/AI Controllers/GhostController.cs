@@ -72,7 +72,7 @@ public class GhostController : MonoBehaviour, ControlledObject
 			if (timeElapsed >= 20) { // Implement: when do you leave chase mode?
 				lastMode = currentMode;
 				//currentMode = // What mode do you change to?
-				//currentMode = ghostMode.kScatter;
+				currentMode = ghostMode.kScatter;
 
 				timeElapsed = 0;
 			}
@@ -98,8 +98,9 @@ public class GhostController : MonoBehaviour, ControlledObject
 			// Reached home location
 			if (myLoc.x / 8 == targetx && myLoc.y / 8 == targety) {
 				lastMode = currentMode;
-				//currentMode = // What mode do you change to?
-				currentMode = ghostMode.kInHouse;
+                    //currentMode = // What mode do you change to?
+                    Debug.Log("Reached target from death");
+				currentMode = ghostMode.kChase;
 				this.GetComponent<Renderer> ().material.color = this.GetComponent<GhostSpecialization> ().GetBaseColor ();
 				this.transform.localScale = Vector3.one;
 
@@ -160,7 +161,7 @@ public class GhostController : MonoBehaviour, ControlledObject
 		this.transform.localScale = Vector3.one * 0.5f;
 		this.GetComponent<Renderer> ().material.color = currColor;
 		//currentMode = // What mode do you change to?
-		currentMode = ghostMode.kInHouse;
+		currentMode = ghostMode.kDead;
 	}
 
 	public void Reset ()
@@ -169,7 +170,6 @@ public class GhostController : MonoBehaviour, ControlledObject
 		lastDirection = GameController.direction.kLeft;
 		currentMode = lastMode = this.GetComponent<GhostSpecialization> ().GetStartMode ();
 		transform.localScale = Vector3.one;
-
 		timeElapsed = 0;
 	}
 

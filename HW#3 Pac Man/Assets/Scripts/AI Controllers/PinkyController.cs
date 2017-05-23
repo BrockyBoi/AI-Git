@@ -54,8 +54,8 @@ public class PinkyController : MonoBehaviour, GhostSpecialization
 			break;
 		case GhostController.ghostMode.kScatter:
 			// Where do you go in scatter mode?
-			y = 0;
-			x = 288 / 8;
+			x = 0;
+			y = 288 / 8;
 			break;
 		case GhostController.ghostMode.kDead: // back in ghost box
 			// Moves to top of ghost box before regenerating
